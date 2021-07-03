@@ -34,6 +34,19 @@ export const Productos = () => {
        consultarPromesa();
     }, [])
 
+
+    const [numero, setNumero] = useState(0);
+
+
+    const handleIncrement = () => {
+      setNumero(numero + 1);
+    };
+  
+    const handleDecrement = () => {
+      setNumero(numero - 1);
+    };
+
+  
     return(
         <>
         {productos.length === 0 ? (<h1>Cargando...</h1>) : ( 
@@ -44,6 +57,9 @@ export const Productos = () => {
             ))}
         </ul>
         <h1>{productos.length}</h1>
+        <p>{numero}</p>
+        <button onClick={handleIncrement}>AGREGAR</button>
+        <button onClick={handleDecrement}>SACAR</button>
         </>
         ) }
         </>
